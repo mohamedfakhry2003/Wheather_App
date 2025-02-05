@@ -7,8 +7,9 @@ class NoWeather extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: Text(
-        "there is no weather \nstart searching now",
+        "there is no weather \nstart searching now 🔍",
         style: TextStyle(fontSize: 30),
+        textAlign: TextAlign.center,
       ),
     );
   }

@@ -10,6 +10,7 @@ class HomeView extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
+          foregroundColor: Colors.white,
           title: const Text("Weather App"),
           backgroundColor: Colors.lightBlue,
           actions: [
