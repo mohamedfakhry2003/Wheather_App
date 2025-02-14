@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/cubits/search_cubit.dart';
 import 'package:weather_app/views/home_view.dart';
 
 class MyTextField extends StatelessWidget {
@@ -19,12 +21,9 @@ class MyTextField extends StatelessWidget {
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
           suffixIcon: IconButton(
               onPressed: () {
+                BlocProvider.of<SearchCubit>(context)
+                    .getWeather(_controller.text);
                 Navigator.of(context).pop();
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) {
-                    return const HomeView();
-                  },
-                ));
               },
               icon: const Icon(Icons.search))),
     );
