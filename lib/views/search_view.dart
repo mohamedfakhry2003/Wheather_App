@@ -10,7 +10,6 @@ class SearchView extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text("Search a city"),
-          backgroundColor: Colors.orangeAccent,
         ),
         body: Center(
           child: Padding(
@@ -25,4 +24,3 @@ class SearchView extends StatelessWidget {
     );
   }
 }
-

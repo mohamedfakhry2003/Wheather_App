@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/cubits/search_cubit.dart';
-import 'package:weather_app/views/home_view.dart';
 
 class MyTextField extends StatelessWidget {
   MyTextField({

@@ -18,13 +18,26 @@ class WeatherModel {
 
   factory WeatherModel.fromJson(json) {
     return WeatherModel(
-      minTemp: json["forecast"]["forecastday"][0]["day"]["mintemp_c"].toString(),
-      maxTemp: json["forecast"]["forecastday"][0]["day"]["maxtemp_c"].toString(),
+      minTemp:
+          json["forecast"]["forecastday"][0]["day"]["mintemp_c"].toString(),
+      maxTemp:
+          json["forecast"]["forecastday"][0]["day"]["maxtemp_c"].toString(),
       conditon: json["current"]["condition"]["text"],
       lastUpdated: json["current"]["last_updated"],
       currentTemp: json["current"]["temp_c"].toString(),
       image: json["current"]["condition"]["icon"],
       cityName: json["location"]["name"],
+    );
+  }
+  factory WeatherModel.error(e) {
+    return WeatherModel(
+      cityName: "no such city",
+      minTemp: '/',
+      maxTemp: '/',
+      conditon: '/',
+      lastUpdated: '/',
+      currentTemp: '/',
+      image: '',
     );
   }
 }

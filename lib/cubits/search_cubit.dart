@@ -4,11 +4,12 @@ import 'package:weather_app/models/weather_model.dart';
 import 'package:weather_app/services/weather_services.dart';
 
 class SearchCubit extends Cubit<WeatherState> {
-  SearchCubit():super(NoWeatherState());
+  SearchCubit() : super(NoWeatherState());
 
+  WeatherModel? weatherModel ;
   getWeather(String value) async {
     try {
-      WeatherModel? weatherModel =
+      weatherModel =
           await WeatherServices().getCurrentWeather(value);
 
       emit(WeatherLoadedState(weatherModel: weatherModel!));
